@@ -28,7 +28,6 @@ public class Principal {
 	    ds.save(p);
 	    for (Person e : ds.find(Person.class))
 	         System.err.println(e);
-
 	}
 
 }
