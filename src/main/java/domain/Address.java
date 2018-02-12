@@ -1,5 +1,8 @@
 package domain;
 
+import org.mongodb.morphia.annotations.Entity;
+
+@Entity
 public class Address {
 	String street;
 	String city;
