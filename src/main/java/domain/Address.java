@@ -3,10 +3,12 @@ package domain;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Property;
 
 @Entity("adress")
 public class Address {
 	@Id
+	@Property("id")
 	private ObjectId id;
 	String street;
 	String city;
@@ -67,7 +69,7 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [_id=" + id + ", street=" + street + ", city=" + city + ", postCode=" + postCode + ", country="
+		return "Address [id=" + id + ", street=" + street + ", city=" + city + ", postCode=" + postCode + ", country="
 				+ country + "]";
 	}
 

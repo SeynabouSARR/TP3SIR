@@ -24,56 +24,39 @@ public class Principal {
 
 
 	    Person p = new Person();
-	    p.setName("Tintin");
+	    p.setName("Seynabou SARR");
 
 	    Address address = new Address();
-	    address.setStreet("11 Rue du bois perrin");
+	    address.setStreet("13 Rue du bois perrin");
 	    address.setCity("Rennes");
 	    address.setPostCode("35700");
 	    address.setCountry("France");
+	    Key<Address> cle1 = ds.save(address);
+
+
 	    //set address
-	    //p.addAddress(address);
+	    p.getAddress().add(address);
+	    Key<Person> cle2 = ds.save(p);
+
+	    System.out.println("cle1 "+cle1);
+	    System.out.println("cle2 "+cle2);
 	    // Save the POJO
 	    //System.out.println("aaaaaaaaaaa "+ObjectId.get());
-	    Key<Person> cle = ds.save(p);
 
-	    System.out.println("bbbbbbbbb "+cle);
 	    System.out.println(p);
 			    /*for (Person e : ds.find(Person.class))
 	    {
 	    	System.out.println("println(e)");
 	    }*/
 
-	   Query<Person> query = ds.createQuery(Person.class);
-	   List<Person> personnes = query.asList();
-
-	      
-	   System.out.println(personnes.size());
-	   System.out.println(ds.getDB().getCollectionNames());
+	   //Query<Person> query = ds.createQuery(Person.class);
+	   //List<Person> personnes = query.asList();
 
 
 
 
 
 
-		 /*String dbName = new String("bank");
-		     MongoClient mongo = new MongoClient();
-		     Morphia morphia = new Morphia();
-		     Datastore datastore = morphia.createDatastore(mongo, dbName);
-
-		     morphia.mapPackage("domain");
-
-		     Humain homme = new Humain();
-		     homme.setName("Mecodeboue");
-
-
-		     Key<Humain> savedHumain = datastore.save(homme);
-		     System.out.println(savedHumain);
-
-		     Query<Humain> query = datastore.createQuery(Humain.class);
-		     List<Humain> humains = query.asList();
-
-		     System.out.println(humains.size());*/
 	}
 
 }

@@ -9,12 +9,14 @@ import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
 import org.mongodb.morphia.annotations.Reference;
 
-@Entity
+@Entity("person")
 public class Person {
 	@Id
 	@Property("id")
 	private ObjectId id;
 	private String name;
+	@Reference
+	private List<Address> address = new ArrayList<Address>();
 
 	public Person() {
 
@@ -41,11 +43,21 @@ public class Person {
 		this.name = name;
 	}
 
+	public List<Address> getAddress() {
+		return address;
+	}
 
+	public void setAddress(List<Address> address) {
+		this.address = address;
+	}
+
+	/*public void addAddress(Address address) {
+		this.address.add(address);
+	}*/
 
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + "]";
+		return "Person [id=" + id + ", name=" + name + ", address=" + address + "]";
 	}
 
 }
