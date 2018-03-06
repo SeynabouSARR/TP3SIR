@@ -1,28 +1,22 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
-import org.mongodb.morphia.annotations.Reference;
 
 @Entity
-public class Person {
+public class Humain {
+
 	@Id
 	@Property("id")
-	private ObjectId id;
+	protected ObjectId id;
+
 	private String name;
 
-	public Person() {
 
-	}
+	public Humain() {
 
-	public Person(ObjectId id, String name) {
-		this.id =id ;
-		this.name = name;
 	}
 
 	public ObjectId getId() {
@@ -41,11 +35,17 @@ public class Person {
 		this.name = name;
 	}
 
-
-
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + "]";
+		return "Humain [id=" + id + ", name=" + name + "]";
 	}
+
+
+
+
+
+
+
+
 
 }
