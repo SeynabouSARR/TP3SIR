@@ -23,8 +23,8 @@ public class Principal {
 	    Datastore ds = morphia.createDatastore(mongo, "tp3");
 
 
-	    Person p = new Person();
-	    p.setName("Seynabou SARR");
+	    Person sarr = new Person();
+	    sarr.setName("Seynabou SARR");
 
 	    Address address = new Address();
 	    address.setStreet("13 Rue du bois perrin");
@@ -35,15 +35,15 @@ public class Principal {
 
 
 	    //set address
-	    p.getAddress().add(address);
-	    Key<Person> cle2 = ds.save(p);
+	    sarr.getAddress().add(address);
+	    Key<Person> cle2 = ds.save(sarr);
 
 	    System.out.println("cle1 "+cle1);
 	    System.out.println("cle2 "+cle2);
 	    // Save the POJO
 	    //System.out.println("aaaaaaaaaaa "+ObjectId.get());
 
-	    System.out.println(p);
+	    System.out.println(sarr);
 			    /*for (Person e : ds.find(Person.class))
 	    {
 	    	System.out.println("println(e)");
