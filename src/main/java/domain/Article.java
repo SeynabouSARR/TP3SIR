@@ -12,6 +12,7 @@ import org.mongodb.morphia.annotations.Reference;
 public class Article {
 	
 	 @Id
+	 @GeneretedValue
 	 private ObjectId id;
 	 private String name;
 	 private int stars;

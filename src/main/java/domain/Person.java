@@ -11,6 +11,7 @@ import org.mongodb.morphia.annotations.Reference;
 @Entity
 public class Person {
 	@Id
+	@GeneretedValue
 	private ObjectId id;
 	private String name;
 	@Reference
