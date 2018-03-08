@@ -1,4 +1,4 @@
-package domain;
+package dao.morphia;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,16 +10,18 @@ import org.mongodb.morphia.query.Query;
 
 import com.mongodb.MongoClient;
 
-public class ArticleDAO implements DAO {
+import domain.Article;
+
+public class ArticleDAO implements DAO<Article> {
 
 	private Morphia morphia;
     private Datastore datastore;
 
-	public ArticleDAO() {
+	public ArticleDAO(String database_name) {
 
 		morphia = new Morphia();
 		morphia.mapPackage("domain");
-		datastore = morphia.createDatastore(new MongoClient(), "tp3");
+		datastore = morphia.createDatastore(new MongoClient(), database_name);
 
 	}
 
@@ -38,9 +40,8 @@ public class ArticleDAO implements DAO {
 
 
 
-	public Key save(Object element) {
-		// TODO Auto-generated method stub
-		return null;
+	public Key<Article> save(Article article) {
+		return datastore.save(article);
 	}
 
 

@@ -13,7 +13,13 @@ import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 import com.mongodb.connection.QueryResult;
 
+import dao.morphia.AddressDAO;
+import dao.morphia.ArticleDAO;
+import dao.morphia.PersonDAO;
+
 public class Principal {
+
+	final static String DATABASE_NAME = "_tp3_";
 
 	public static void main(String[] args) {
 
@@ -22,10 +28,14 @@ public class Principal {
 	    //morphia.map(Person.class).map(Address.class);
 	    morphia.mapPackage("domain");
 
-	    Datastore ds = morphia.createDatastore(mongo, "tp3_");
+	    //Datastore ds = morphia.createDatastore(mongo, "tp3_");
+		PersonDAO managerPerson = new PersonDAO(DATABASE_NAME);
+		ArticleDAO managerArticle = new ArticleDAO(DATABASE_NAME);
+		AddressDAO managerAddress = new AddressDAO(DATABASE_NAME);
 
 
-	    Person seynabou = new Person();
+
+	    /*Person seynabou = new Person();
 	    seynabou.setName("Seynabou SARR");
 	    Person melaine = new Person();
 	    melaine.setName("Melaine BOUE");
@@ -52,43 +62,44 @@ public class Principal {
 	    address_cesson_sevigne.setCountry("France");
 
 	    //Key<Address> cle1 = ds.save(address_bois_perrin11);
-	    ds.save(address_bois_perrin11);
-	    ds.save(address_bois_perrin13);
-	    ds.save(address_cesson_sevigne);
+	    managerAddress.save(address_bois_perrin11);
+	    managerAddress.save(address_bois_perrin13);
+	    managerAddress.save(address_cesson_sevigne);
 	    System.out.println("Enregistrement des adresses terminées");
 
-	    melaine.getAddress().add(address_bois_perrin11);
-	    seynabou.getAddress().add(address_bois_perrin13);
-	    meco.getAddress().add(address_cesson_sevigne);
+	    melaine.addAddress(address_bois_perrin11);
+	    seynabou.addAddress(address_bois_perrin13);
+	    meco.addAddress(address_cesson_sevigne);
 
-	    ds.save(melaine);
-	    ds.save(seynabou);
-	    ds.save(meco);
+	    managerPerson.save(melaine);
+	    managerPerson.save(seynabou);
+	    managerPerson.save(meco);
 	    System.out.println("Enregistrement des personnes terminées");
 
 	    Article myHpComputer = new Article();
 	    myHpComputer.setStars(5);
 	    myHpComputer.setName("HP LAPTOP OIE");
-	    myHpComputer.getBuyers().add(seynabou);
-	    ds.save(myHpComputer);
+	    myHpComputer.addBuyer(seynabou);
+	    managerArticle.save(myHpComputer);
 
 	    Article telephone_iphone = new Article();
 	    telephone_iphone.setStars(5);
 	    telephone_iphone.setName("iPhone 7S");
-	    telephone_iphone.getBuyers().add(seynabou);
-	    telephone_iphone.getBuyers().add(melaine);
-	    telephone_iphone.getBuyers().add(meco);
-	    ds.save(telephone_iphone);
+	    telephone_iphone.addBuyer(seynabou);
+	    telephone_iphone.addBuyer(melaine);
+	    telephone_iphone.addBuyer(meco);
+	    managerArticle.save(telephone_iphone);
 
-	    System.out.println("Enregistrement des articles");
+	    System.out.println("Enregistrement des articles");*/
 
 
-	    Query<Person> query = ds.createQuery(Person.class);
-	    List<Person> tout = query.asList();
-	    System.out.println(tout.size()+"/bien");
+	    //Query<Person> query = ds.createQuery(Person.class);
+	    //List<Person> tout = query.asList();
+	    List<Article> articles = managerArticle.getList();
+	    //System.out.println(a.size()+"/bien");
 	    System.out.println("--------------------------------------------------------");
-	    for (Person person : tout) {
-			System.out.println(person);
+	    for (Article article : articles) {
+			System.out.println(article);
 		}
 	    System.out.println("--------------------------------------------------------");
 
@@ -124,10 +135,11 @@ public class Principal {
 
 
 		//List<Person> personnes = query.asList();
-	    for(Key<Person> key1 : query.asKeyList()){
+	    /*for(Key<Person> key1 : query.asKeyList()){
 	    	//System.out.println(key1);
 	    }
 	    System.out.println(query.count());
+*/
 
 
 	    /*Iterator<Person> it = query.iterator();

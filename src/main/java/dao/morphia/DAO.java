@@ -1,4 +1,4 @@
-package domain;
+package dao.morphia;
 
 import java.util.List;
 

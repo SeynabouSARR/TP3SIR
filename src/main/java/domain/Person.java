@@ -51,13 +51,13 @@ public class Person {
 		this.address = address;
 	}
 
-	/*public void addAddress(Address address) {
+	public void addAddress(Address address) {
 		this.address.add(address);
-	}*/
+	}
 
 	@Override
 	public String toString() {
-		return "Person [id=" + this.id + ", name=" + this.name + ", address=" + this.address + "]";
+		return "Person [id=" + this.id + "] , name : " + this.name + ", " + this.address ;
 	}
 
 }
