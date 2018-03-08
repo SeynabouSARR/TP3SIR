@@ -34,7 +34,6 @@ public class Principal {
 	    Person meco = new Person();
 	    meco.setName("Meco DEBOUE");
 
-
 	    Address address_bois_perrin11 = new Address();
 	    address_bois_perrin11.setStreet("11 Rue du bois perrin");
 	    address_bois_perrin11.setCity("Rennes");
