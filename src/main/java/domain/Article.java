@@ -61,4 +61,22 @@ public class Article {
 	public void setBuyers(List<Person> buyers) {
 		this.buyers = buyers;
 	}
+
+	public void addBuyer(Person person) {
+		this.buyers.add(person);
+	}
+
+	@Override
+	public String toString() {
+		String articleDetails = "---------------------------------------------------------------------------------\n";
+		articleDetails += "Article [id=" + id + ", name=" + name + ", stars=" + stars +"\n Acheteurs --\n";
+
+		for (Person person : this.buyers) {
+			articleDetails+= person.toString()+"\n";
+		}
+
+		return articleDetails;
+	}
+
+
 }
