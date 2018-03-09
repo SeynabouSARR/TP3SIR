@@ -1,38 +1,22 @@
 package domain;
 
-import java.util.Iterator;
-import java.util.List;
-
-import org.bson.types.ObjectId;
-import org.mongodb.morphia.Datastore;
-import org.mongodb.morphia.Key;
-import org.mongodb.morphia.Morphia;
-import org.mongodb.morphia.query.Query;
-
-import com.mongodb.Mongo;
-import com.mongodb.MongoClient;
-import com.mongodb.connection.QueryResult;
-
 import dao.morphia.AddressDAO;
 import dao.morphia.ArticleDAO;
 import dao.morphia.PersonDAO;
+import java.util.List;
 
 public class Principal {
 
-	final static String DATABASE_NAME = "_tp3_";
+  static final String DATABASE_NAME = "_tp3_";
 
-	public static void main(String[] args) {
+  /**
+   * La fonction principal.
+   * @param args : les arguments fournis
+   */
+  public static void main(String[] args) {
 
-		PersonDAO managerPerson = new PersonDAO(DATABASE_NAME);
-		ArticleDAO managerArticle = new ArticleDAO(DATABASE_NAME);
-		AddressDAO managerAddress = new AddressDAO(DATABASE_NAME);
+    ArticleDAO managerArticle = new ArticleDAO(DATABASE_NAME);
 
-	    Person seynabou = new Person();
-	    seynabou.setName("Seynabou SARR");
-	    Person melaine = new Person();
-	    melaine.setName("Melaine BOUE");
-	    Person meco = new Person();
-	    meco.setName("Meco DEBOUE");
 
 	    Address address_bois_perrin11 = new Address();
 	    address_bois_perrin11.setStreet("11 Rue du bois perrin");
@@ -53,15 +37,25 @@ public class Principal {
 	    address_cesson_sevigne.setCountry("France");
 
 	    //Key<Address> cle1 = ds.save(address_bois_perrin11);
-	    managerAddress.save(address_bois_perrin11);
-	    managerAddress.save(address_bois_perrin13);
-	    managerAddress.save(address_cesson_sevigne);
-	    System.out.println("Enregistrement des adresses terminées");
+
+    AddressDAO managerAddress = new AddressDAO(DATABASE_NAME);
+    managerAddress.save(address_bois_perrin11);
+    managerAddress.save(address_bois_perrin13);
+    managerAddress.save(address_cesson_sevigne);
+    System.out.println("Enregistrement des adresses terminées");
+
+    Person seynabou = new Person();
+    seynabou.setName("Seynabou SARR");
+	    Person melaine = new Person();
+	    melaine.setName("Melaine BOUE");
+	    Person meco = new Person();
+	    meco.setName("Meco DEBOUE");
 
 	    melaine.addAddress(address_bois_perrin11);
 	    seynabou.addAddress(address_bois_perrin13);
 	    meco.addAddress(address_cesson_sevigne);
 
+	    PersonDAO managerPerson = new PersonDAO(DATABASE_NAME);
 	    managerPerson.save(melaine);
 	    managerPerson.save(seynabou);
 	    managerPerson.save(meco);
