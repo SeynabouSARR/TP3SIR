@@ -7,15 +7,15 @@ import org.mongodb.morphia.Key;
 
 import com.mongodb.WriteResult;
 
-public interface DAO<T> {
-
-
-
-	public T get(ObjectId id);
-	public List<T> getList();
-	public Key<T> save(T element);
-	public T find(String name);
-	public WriteResult delete(T element);
-
+public interface Dao<T> {
+  public T get(ObjectId id);
+  
+  public List<T> getList();
+  
+  public Key<T> save(T element);
+  
+  public T find(String name);
+  
+  public WriteResult delete(T element);
 
 }

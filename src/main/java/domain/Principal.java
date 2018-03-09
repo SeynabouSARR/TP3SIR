@@ -1,8 +1,8 @@
 package domain;
 
-import dao.morphia.AddressDAO;
-import dao.morphia.ArticleDAO;
-import dao.morphia.PersonDAO;
+import dao.morphia.AddressDao;
+import dao.morphia.ArticleDao;
+import dao.morphia.PersonDao;
 import java.util.List;
 
 public class Principal {
@@ -35,7 +35,7 @@ public class Principal {
 
     //Key<Address> cle1 = ds.save(address_bois_perrin11);
 
-    AddressDAO managerAddress = new AddressDAO(DATABASE_NAME);
+    AddressDao managerAddress = new AddressDao(DATABASE_NAME);
     managerAddress.save(addressBoisPerrin11);
     managerAddress.save(addressBoisPerrin13);
     managerAddress.save(addressCessonSevigne);
@@ -52,7 +52,7 @@ public class Principal {
     seynabou.addAddress(addressBoisPerrin13);
     meco.addAddress(addressCessonSevigne);
 
-    PersonDAO managerPerson = new PersonDAO(DATABASE_NAME);
+    PersonDao managerPerson = new PersonDao(DATABASE_NAME);
     managerPerson.save(melaine);
     managerPerson.save(seynabou);
     managerPerson.save(meco);
@@ -62,7 +62,7 @@ public class Principal {
     myHpComputer.setStars(5);
     myHpComputer.setName("HP LAPTOP OIE");
     myHpComputer.addBuyer(seynabou);
-    ArticleDAO managerArticle = new ArticleDAO(DATABASE_NAME);
+    ArticleDao managerArticle = new ArticleDao(DATABASE_NAME);
     managerArticle.save(myHpComputer);
 
     Article telephoneIphone = new Article();
