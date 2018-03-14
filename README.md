@@ -6,7 +6,7 @@
     Avoir une base en NOSQL
     Comprendre les bénéfices et les limites des bases nosql
     Comprendre les différents types de bases nosql
-    Réaliser une application en utilisant une API comme Morphia proche de JPA en se plaçant dans un cadre classique de <\br> 
+    Réaliser une application en utilisant une API comme Morphia proche de JPA en se plaçant dans un cadre classique de </br> 
     développement au dessus d’une base orientée document comme Mongo.
     Une base dans la gestion de dependance avec Maven serait un plus 
 
@@ -33,7 +33,7 @@
 La limite sont:la modélisation en document ne permet pas la même flexibilité dans les requêtes et les chargements de données que la modélisation relationnelle. 
 
 Auteurs
-SARR Seynabou<\br>
+SARR Seynabou</br>
 BOUE Melaine
 
 
