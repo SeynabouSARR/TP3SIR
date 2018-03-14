@@ -6,7 +6,7 @@ Prerequis pour ce projet
     Avoir une base en NOSQL
     Comprendre les bénéfices et les limites des bases nosql
     Comprendre les différents types de bases nosql
-    Réaliser une application en utilisant une API comme Morphia proche de JPA en se plaçant dans un cadre classique de                     développement au dessus d’une base orientée document comme Mongo.
+    Réaliser une application en utilisant une API comme Morphia proche de JPA en se plaçant dans un cadre classique de <\br> développement au dessus d’une base orientée document comme Mongo.
     Une base dans la gestion de dependance avec Maven serait un plus 
 
 Technologies utilisées
