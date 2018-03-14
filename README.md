@@ -1,6 +1,6 @@
-<h1>TP 4<\h1>
+<h1>TP 4</h1>
 <h2>#Création d’une application simple qui utilise une base de données MongoDB<\h2>
- <h2>Prerequis pour ce projet<\h2>
+ <h2>Prerequis pour ce projet</h2>
 
     Avoir une base en programmation Java
     Avoir une base en NOSQL
@@ -10,13 +10,13 @@
     développement au dessus d’une base orientée document comme Mongo.
     Une base dans la gestion de dependance avec Maven serait un plus 
 
-<h2>Technologies utilisées<\h2>
+<h2>Technologies utilisées</h2>
 
     Morphia
     Pattern DAO
     MongoDB
 
-<h2>Deploiement<\h2>
+<h2>Deploiement</h2>
 
     Cloner le projet avec le lien de github
     S'assurer que Maven est installé sur notre machine
@@ -28,7 +28,7 @@
     Créer une base de données du nom de "_tp3_"
     Lancer votre application Maven en cliquant sur Run > Run as > Maven Build >
     
-<h1>Reponse à la Question (fin de la partie Morphia)<\h1>
+<h1>Reponse à la Question (fin de la partie Morphia)</h1>
 -----------------------------------------------
 La limite sont:la modélisation en document ne permet pas la même flexibilité dans les requêtes et les chargements de données que la modélisation relationnelle. 
 
